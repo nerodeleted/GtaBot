@@ -469,4 +469,4 @@ for filename in os.listdir('./cogs'):
 # webserver to keep the bot working
 keep_alive()
 #bot Login
-client.run('ODkzMjMxMzM0OTE3NTcwNTgw.YVYcgQ.LP-X8AUmVgEux67x0q12bOnMsdc')
+client.run('TOKEN HERE')

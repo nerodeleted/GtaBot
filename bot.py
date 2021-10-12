@@ -1,3 +1,4 @@
+#imports
 import discord
 from discord.ext import commands, tasks
 import asyncio
@@ -6,7 +7,7 @@ import os
 import json
 import random
 from keep_alive import keep_alive
-
+#Bot stuff like prefix, status, ect
 prefix = ","
 client = commands.Bot(command_prefix=prefix)
 
@@ -29,7 +30,7 @@ async def change_status():
 ####################################################################
 ####################################################################
 # Main code starts :)
-
+#Shop Embeds
 mainshop = [{"name":"Weed","price":100,"description":"420 lmfao"},
             {"name":"Item here","price":1000,"description":"Item  Discription here"},
             {"name":"Item here","price":10000,"description":"Item  Discription here"},
@@ -39,7 +40,7 @@ apartmentsshop = [{"name":"Item here","price":100,"description":"Item  Discripti
             {"name":"Item here","price":10000,"description":"Item  Discription here"},
             {"name":"Item here","price":99999,"description":"Item  Discription here"}]
 
-
+#commands
 @client.command(aliases=['bal'])
 async def balance(ctx):
     await open_account(ctx.author)
@@ -461,10 +462,11 @@ async def update_bank(user,change=0,mode = 'wallet'):
 ####################################################################
 ####################################################################
 
-
+# Adds cogs (none are done yet would like to move the commands to cogs but im not sure how to convert them :,( )
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
-
+# webserver to keep the bot working
 keep_alive()
+#bot Login
 client.run('ODkzMjMxMzM0OTE3NTcwNTgw.YVYcgQ.LP-X8AUmVgEux67x0q12bOnMsdc')
